@@ -1,7 +1,8 @@
 package com.kevin.db.router.dynamic;
 
-import cn.bugstack.middleware.db.router.DBContextHolder;
-import cn.bugstack.middleware.db.router.annotation.DBRouterStrategy;
+
+import com.kevin.db.router.DBContextHolder;
+import com.kevin.db.router.annotation.DBRouterStrategy;
 import org.apache.ibatis.executor.statement.StatementHandler;
 import org.apache.ibatis.mapping.BoundSql;
 import org.apache.ibatis.mapping.MappedStatement;
@@ -20,10 +21,8 @@ import java.util.regex.Pattern;
 
 /**
  * @description: Mybatis 拦截器，通过对 SQL 语句的拦截处理，修改分表信息
- * @author: 小傅哥，微信：fustack
- * @date: 2021/9/30
- * @github: https://github.com/fuzhengwei
- * @Copyright: 公众号：bugstack虫洞栈 | 博客：https://bugstack.cn - 沉淀、分享、成长，让自己和他人都能有所收获！
+ * @author: kevin
+ * @date: 2023/9/30
  */
 @Intercepts({@Signature(type = StatementHandler.class, method = "prepare", args = {Connection.class, Integer.class})})
 public class DynamicMybatisPlugin implements Interceptor {
